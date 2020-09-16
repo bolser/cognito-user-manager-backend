@@ -11,7 +11,7 @@ import (
 )
 
 func Handler(requst events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
-	sess := session.Must(session.NewSession(&aws.Config{Region: aws.String("eu-central-1")}))
+	sess := session.Must(session.NewSession(&aws.Config{Region: aws.String("eu-west-1")}))
 	cip := cognitoidentityprovider.New(sess)
 	result, err := cip.ListUserPools(&cognitoidentityprovider.ListUserPoolsInput{MaxResults: aws.Int64(60)})
 	if err != nil {

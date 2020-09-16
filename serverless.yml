@@ -3,7 +3,7 @@ provider:
   name: aws
   stage: ${opt:stage, 'dev'}
   runtime: go1.x
-  region: eu-central-1
+  region: eu-west-1
   role: cumbDefaultRole
   memorySize: 256
 
@@ -83,7 +83,7 @@ functions:
           cors: true
     environment:
       USERNAME: "admin"
-      PASSWORD: "secret2018"
+      PASSWORD: "y@f+UqZQTT3kKr8X"
 
 resources:
   Resources:
@@ -169,9 +169,6 @@ resources:
           - ""
           - - "https://"
             - Ref: ApiGatewayRestApi
-            - ".execute-api.eu-central-1."
-            - Ref: AWS::URLSuffix
-            - "/"
-            - ${self:provider.stage}
+            - ".execute-api."
       Export:
         Name: ${self:service}:${self:provider.stage}:ServiceEndpoint

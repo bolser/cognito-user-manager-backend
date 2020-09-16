@@ -2,17 +2,20 @@
 
 
 [[projects]]
+  digest = "1:29401894b0873ce84bca18ddb3d614300851999478cc2ce4de6fe473db4842b6"
   name = "github.com/aws/aws-lambda-go"
   packages = [
     "events",
     "lambda",
     "lambda/messages",
-    "lambdacontext"
+    "lambdacontext",
   ]
+  pruneopts = ""
   revision = "4d30d0ff60440c2d0480a15747c96ee71c3c53d4"
   version = "v1.2.0"
 
 [[projects]]
+  digest = "1:afa1d8d7a0b0814e8a9c10fea22cd678a89f38e1b75cb89bac53525342200cc9"
   name = "github.com/aws/aws-sdk-go"
   packages = [
     "aws",
@@ -43,31 +46,45 @@
     "private/protocol/rest",
     "private/protocol/xml/xmlutil",
     "service/cognitoidentityprovider",
-    "service/sts"
+    "service/sts",
   ]
+  pruneopts = ""
   revision = "8f7d1442888a1f96115869cec4af9855018ece98"
   version = "v1.14.18"
 
 [[projects]]
+  digest = "1:6098222470fe0172157ce9bbef5d2200df4edde17ee649c5d6e48330e4afa4c6"
   name = "github.com/dgrijalva/jwt-go"
   packages = ["."]
+  pruneopts = ""
   revision = "06ea1031745cb8b3dab3f6a236daf2b0aa468b7e"
   version = "v3.2.0"
 
 [[projects]]
+  digest = "1:617b3e0f5989d4ff866a1820480990c65dfc9257eb080da749a45e2d76681b02"
   name = "github.com/go-ini/ini"
   packages = ["."]
+  pruneopts = ""
   revision = "06f5f3d67269ccec1fe5fe4134ba6e982984f7f5"
   version = "v1.37.0"
 
 [[projects]]
+  digest = "1:6f49eae0c1e5dab1dafafee34b207aeb7a42303105960944828c2079b92fc88e"
   name = "github.com/jmespath/go-jmespath"
   packages = ["."]
+  pruneopts = ""
   revision = "0b12d6b5"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "d1f4234bd9fb77c9735807935d26aaea046883c736eed9a29c60ea4e049b5dee"
+  input-imports = [
+    "github.com/aws/aws-lambda-go/events",
+    "github.com/aws/aws-lambda-go/lambda",
+    "github.com/aws/aws-sdk-go/aws",
+    "github.com/aws/aws-sdk-go/aws/session",
+    "github.com/aws/aws-sdk-go/service/cognitoidentityprovider",
+    "github.com/dgrijalva/jwt-go",
+  ]
   solver-name = "gps-cdcl"
   solver-version = 1

@@ -20,7 +20,7 @@ func Handler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyRespo
 	var r Request
 	json.Unmarshal([]byte(request.Body), &r)
 
-	sess := session.Must(session.NewSession(&aws.Config{Region: aws.String("eu-central-1")}))
+	sess := session.Must(session.NewSession(&aws.Config{Region: aws.String("eu-west-1")}))
 
 	cip := cognitoidentityprovider.New(sess)
 	_, err := cip.AdminUpdateUserAttributes(&cognitoidentityprovider.AdminUpdateUserAttributesInput{UserPoolId: aws.String(r.UserPoolId), Username: aws.String(r.Username), UserAttributes: r.UserAttributes})
